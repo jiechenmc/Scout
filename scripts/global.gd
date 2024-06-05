@@ -2,6 +2,7 @@ extends Node
 
 enum PLAYER_STATE {IDLE, DEAD, WALKING}
 enum TREE_STATE {NONE, HARVESTABLE}
+enum EQUIP_STATE {NONE, BOW}
 
 var numCarrots = 0
 var numOnions = 0

@@ -1,0 +1,58 @@
+[gd_resource type="Resource" script_class="Inventory" load_steps=16 format=3 uid="uid://qen3kuctse0n"]
+
+[ext_resource type="Resource" uid="uid://b4labuo6n2uwq" path="res://inventory/items/apple.tres" id="1_7o64y"]
+[ext_resource type="Script" path="res://inventory/inventory.gd" id="2_ykm4j"]
+[ext_resource type="Script" path="res://inventory/inventory_slot.gd" id="3_viow1"]
+
+[sub_resource type="Resource" id="Resource_qsmaw"]
+script = ExtResource("3_viow1")
+item = ExtResource("1_7o64y")
+amount = 12
+
+[sub_resource type="Resource" id="Resource_k33dm"]
+script = ExtResource("3_viow1")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_3hqka"]
+script = ExtResource("3_viow1")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_3j6wb"]
+script = ExtResource("3_viow1")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_1pb1x"]
+script = ExtResource("3_viow1")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_1ay3q"]
+script = ExtResource("3_viow1")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_vy13b"]
+script = ExtResource("3_viow1")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_6jbcl"]
+script = ExtResource("3_viow1")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_fpu77"]
+script = ExtResource("3_viow1")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_qfark"]
+script = ExtResource("3_viow1")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_orwsu"]
+script = ExtResource("3_viow1")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_s1wg6"]
+script = ExtResource("3_viow1")
+amount = 0
+
+[resource]
+script = ExtResource("2_ykm4j")
+slots = Array[ExtResource("3_viow1")]([SubResource("Resource_qsmaw"), SubResource("Resource_k33dm"), SubResource("Resource_3hqka"), SubResource("Resource_3j6wb"), SubResource("Resource_1pb1x"), SubResource("Resource_1ay3q"), SubResource("Resource_vy13b"), SubResource("Resource_6jbcl"), SubResource("Resource_fpu77"), SubResource("Resource_qfark"), SubResource("Resource_orwsu"), SubResource("Resource_s1wg6")])

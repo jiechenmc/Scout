@@ -1,11 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://b0q3hk2rc0oti"]
+[gd_scene load_steps=15 format=3 uid="uid://b0q3hk2rc0oti"]
 
+[ext_resource type="Script" path="res://scenes/world.gd" id="1_ltvro"]
 [ext_resource type="PackedScene" uid="uid://bbqgvpyh548a8" path="res://scenes/player.tscn" id="1_mfw6d"]
 [ext_resource type="Texture2D" uid="uid://llrmn6xfj3wl" path="res://assets/survivalgame-terrian-defult.png" id="2_rxut1"]
 [ext_resource type="Texture2D" uid="uid://bttrirq8uh615" path="res://assets/survivalgame-terrian-cliffs.png" id="3_y4irp"]
 [ext_resource type="Texture2D" uid="uid://dh7w2g8tgkaq3" path="res://assets/survivalgame-trees.png" id="4_0q7ps"]
 [ext_resource type="Texture2D" uid="uid://7yioooqwjpxm" path="res://assets/survivalgame-terrian-water.png" id="5_0mamt"]
 [ext_resource type="PackedScene" uid="uid://dloe6mghrrcn6" path="res://scenes/apple_tree.tscn" id="6_bjkvr"]
+[ext_resource type="PackedScene" uid="uid://bqya03360u3rx" path="res://scenes/stick.tscn" id="7_u71g4"]
+[ext_resource type="PackedScene" uid="uid://dbga6l858ua37" path="res://scenes/slime.tscn" id="8_g6tav"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_is0o2"]
 texture = ExtResource("2_rxut1")
@@ -257,6 +260,7 @@ sources/2 = SubResource("TileSetAtlasSource_it8mc")
 sources/3 = SubResource("TileSetAtlasSource_usjwa")
 
 [node name="world" type="Node2D"]
+script = ExtResource("1_ltvro")
 
 [node name="player" parent="." instance=ExtResource("1_mfw6d")]
 position = Vector2(82, 46)
@@ -275,3 +279,20 @@ layer_2/tile_data = PackedInt32Array(131068, 524290, 1, -131070, 524290, 1, -655
 
 [node name="AppleTree" parent="." instance=ExtResource("6_bjkvr")]
 position = Vector2(-52, 59)
+
+[node name="stick" parent="." instance=ExtResource("7_u71g4")]
+position = Vector2(-63, 5)
+
+[node name="stick2" parent="." instance=ExtResource("7_u71g4")]
+position = Vector2(-115, -12)
+
+[node name="Slime" parent="." instance=ExtResource("8_g6tav")]
+
+[node name="Slime2" parent="." instance=ExtResource("8_g6tav")]
+position = Vector2(-92, -24)
+
+[node name="SlimeTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="SlimeTimer" to="." method="_on_slime_timer_timeout"]
