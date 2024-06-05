@@ -547,7 +547,14 @@ script = ExtResource("1_tdcbd")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_rw4k7")
 animation = &"idle"
-frame_progress = 0.818812
+frame_progress = 0.707302
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_p5uy8")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2.5, 2.5)
+limit_left = -271
+limit_top = -150
+limit_right = 265
+limit_bottom = 147
