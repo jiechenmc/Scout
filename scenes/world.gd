@@ -13,7 +13,8 @@ func _process(delta):
 
 
 func _on_slime_timer_timeout():
-	var slime_instance = slime.instantiate()
-	slime_instance.position = $player.position
-	add_child(slime_instance)
-	print("Spawning Slime")
+	#var slime_instance = slime.instantiate()
+	#slime_instance.position = $player.position + Vector2.RIGHT
+	#add_child(slime_instance)
+	#print("Spawning Slime")
+	pass

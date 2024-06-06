@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://csybc8g3jy734"]
 
 [ext_resource type="Texture2D" uid="uid://b6utxuu0aqvkm" path="res://assets/inventory-slot.png" id="1_fprd0"]
-[ext_resource type="Script" path="res://inventory/inventory_ui_slot.gd" id="1_goo83"]
+[ext_resource type="Script" path="res://inventory/UI/inventory_ui_slot.gd" id="1_goo83"]
 
 [node name="Inventory_UI_Slot" type="Panel"]
 self_modulate = Color(1, 1, 1, 0)
@@ -35,3 +35,5 @@ offset_right = 25.0
 offset_bottom = 28.0
 scale = Vector2(0.5, 0.5)
 horizontal_alignment = 2
+
+[connection signal="gui_input" from="CenterContainer/Panel" to="." method="_on_panel_gui_input"]

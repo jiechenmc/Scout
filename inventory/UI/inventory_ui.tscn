@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b3dtg4g4y44aa"]
+[gd_scene load_steps=5 format=3 uid="uid://b3dtg4g4y44aa"]
 
-[ext_resource type="Script" path="res://inventory/Inventory_UI.gd" id="1_afi5s"]
+[ext_resource type="Script" path="res://inventory/UI/Inventory_UI.gd" id="1_afi5s"]
 [ext_resource type="Texture2D" uid="uid://wmxbng8ynpck" path="res://assets/inventory-background.png" id="2_51ki4"]
-[ext_resource type="PackedScene" uid="uid://csybc8g3jy734" path="res://inventory/inventory_ui_slot.tscn" id="3_cwow5"]
+[ext_resource type="PackedScene" uid="uid://csybc8g3jy734" path="res://inventory/UI/inventory_ui_slot.tscn" id="3_cwow5"]
+[ext_resource type="Texture2D" uid="uid://bxlht4mqte35m" path="res://assets/slime-icon.png" id="4_lc48p"]
 
 [node name="Inventory_UI" type="Control"]
 custom_minimum_size = Vector2(89, 65)
@@ -76,3 +77,13 @@ layout_mode = 2
 
 [node name="Inventory_UI_Slot12" parent="NinePatchRect/GridContainer" instance=ExtResource("3_cwow5")]
 layout_mode = 2
+
+[node name="Coins_Label" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 105.0
+offset_right = 210.0
+offset_bottom = 24.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(98, 13)
+texture = ExtResource("4_lc48p")

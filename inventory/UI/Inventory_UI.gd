@@ -8,6 +8,7 @@ var is_open = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	inventory.update.connect(update_slots)
+	Global.coinsChanged.connect(updateCoinsLabel)
 	update_slots()
 	close()
 
@@ -30,4 +31,7 @@ func close():
 func open():
 	visible = true
 	is_open = true
+	
+func updateCoinsLabel():
+	$Coins_Label.text = str(Global.coins)
 	

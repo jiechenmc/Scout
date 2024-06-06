@@ -7,6 +7,7 @@ var state = Global.PLAYER_STATE.IDLE
 var equip = Global.EQUIP_STATE.NONE
 var isWeaponOnCD = false
 var mouse_location_from_player = null
+var health
 
 var arrow = preload("res://scenes/arrow.tscn")
 
@@ -16,6 +17,14 @@ func _ready():
 	pass
 	
 func _physics_process(delta):
+	
+	if health == 0:
+		$AnimatedSprite2D.play("death")
+		await get_tree().create_timer(1).timeout
+		$AnimatedSprite2D.set_frame_and_progress(6, 0)
+		return
+	
+	
 	var direction = Input.get_vector("left", "right", "up", "down")
 	mouse_location_from_player = get_global_mouse_position() - position
 	if direction.x == 0 and direction.y == 0:
@@ -99,3 +108,7 @@ func player():
 	
 func collect(item):
 	Inventory.insert(item)
+
+func take_damage(damage):
+	print("TAKING DAMAGE")
+	self.health = 0

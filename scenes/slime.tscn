@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dbga6l858ua37"]
+[gd_scene load_steps=29 format=3 uid="uid://dbga6l858ua37"]
 
 [ext_resource type="Texture2D" uid="uid://cdwp3uaay71hg" path="res://assets/survivalgame-enemy-slime.png" id="1_mel52"]
 [ext_resource type="Script" path="res://scenes/slime.gd" id="1_o6kip"]
@@ -153,13 +153,16 @@ animations = [{
 radius = 7.07107
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_atvpj"]
-radius = 4.12311
+radius = 7.07107
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_der0q"]
 radius = 63.0079
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r7msf"]
-radius = 150.053
+radius = 11.0454
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hqcvh"]
+radius = 11.0
 
 [node name="Slime" type="CharacterBody2D"]
 script = ExtResource("1_o6kip")
@@ -195,7 +198,14 @@ position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_r7msf")
 disabled = true
 
+[node name="Attack_Area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack_Area"]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_hqcvh")
+
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="Detection_Zone" to="." method="_on_detection_zone_body_entered"]
 [connection signal="body_exited" from="Detection_Zone" to="." method="_on_detection_zone_body_exited"]
 [connection signal="body_entered" from="Collect_Area" to="." method="_on_collect_area_body_entered"]
+[connection signal="body_entered" from="Attack_Area" to="." method="_on_attack_area_body_entered"]

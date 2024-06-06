@@ -77,3 +77,10 @@ func _on_collect_area_body_entered(body):
 	if body.has_method("player"):
 		player = body
 		collect_slime()
+
+
+func _on_attack_area_body_entered(body):
+	if body.has_method("player"):
+		print("PLAYER TAKING DAMAGE")
+		player = body
+		player.take_damage(0)

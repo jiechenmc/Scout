@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_tdcbd"]
 [ext_resource type="Texture2D" uid="uid://dqg7gnl312tat" path="res://assets/survivalgame-player-green.png" id="2_8h03l"]
 [ext_resource type="Resource" uid="uid://qen3kuctse0n" path="res://inventory/player_inventory.tres" id="2_yoatj"]
-[ext_resource type="PackedScene" uid="uid://b3dtg4g4y44aa" path="res://inventory/inventory_ui.tscn" id="4_rove7"]
+[ext_resource type="PackedScene" uid="uid://b3dtg4g4y44aa" path="res://inventory/UI/inventory_ui.tscn" id="4_rove7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ot2gd"]
 atlas = ExtResource("2_8h03l")
@@ -549,7 +549,7 @@ Inventory = ExtResource("2_yoatj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_rw4k7")
-animation = &"e-attack"
+animation = &"death"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_p5uy8")
